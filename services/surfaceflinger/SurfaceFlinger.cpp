@@ -1341,6 +1341,7 @@ void SurfaceFlinger::onHotplugReceived(int32_t sequenceId,
             createBuiltinDisplayLocked(DisplayDevice::DISPLAY_PRIMARY);
         }
         createDefaultDisplayDevice();
+        property_set("service.sf.primary_display_ready", "1");
     } else {
         if (sequenceId != mComposerSequenceId) {
             return;
